@@ -9,7 +9,6 @@
   let
 
     system         = "x86_64-linux";
-      #old-quarto-pkgs = nixpkgs.legacyPackages.${system};
     quarto-overlay  = final: prev: {
 
       quarto = prev.quarto.override {
@@ -29,9 +28,16 @@
     pkgs  = import nixpkgs { inherit system; overlays = [ quarto-overlay ];};
 
 
+
+
   in
   {
     packages.x86_64-linux.quarto = pkgs.quarto;
     packages.x86_64-linux.default = pkgs.quarto;
+    packages.x86_64-linux.quarto-for-quiqr =
+      pkgs.writeShellScriptBin "quarto-for-quiqr" ''
+        ${pkgs.quarto}/bin/quarto render ''${1}
+        echo ''${1}
+      '';
   };
 }
