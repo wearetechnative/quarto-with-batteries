@@ -36,7 +36,7 @@
     packages.x86_64-linux.default = pkgs.quarto;
     packages.x86_64-linux.quarto-for-quiqr =
       pkgs.writeShellScriptBin "quarto-for-quiqr" ''
-        ${pkgs.quarto}/bin/quarto render ''${1}
+        ${pkgs.quarto}/bin/quarto render "''${1}"
         echo ''${1}
       '';
   };
