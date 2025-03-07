@@ -13,7 +13,9 @@ let
 
   qBuildInputs = with pkgs; [
     quarto
-    rPackages.tinytex
+    texlive.combined.scheme-full
+
+    #rPackages.tinytex
     (python3.withPackages (python-pkgs: with python-pkgs; [
       pyyaml
     ]
