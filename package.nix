@@ -5,11 +5,12 @@ let
 
   qscript = pkgs.writeShellScriptBin qname ''
 
+    echo $PATH
     ${pkgs.quarto}/bin/quarto render "''${1}"
     echo "''${1%.*}".pdf
     '';
 
-  qBuildInputs = with pkgs; [ quarto ];
+  qBuildInputs = with pkgs; [ quarto python3 ];
 
 in pkgs.symlinkJoin {
     name = qname;
