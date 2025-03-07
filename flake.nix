@@ -11,7 +11,7 @@
 
       quarto = prev.quarto.override {
         extraRPackages = [
-          prev.rPackages.reticulate
+            prev.rPackages.reticulate
         ];
         extraPythonPackages = ps: with ps; [
           plotly
