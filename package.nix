@@ -10,7 +10,7 @@ let
     echo "''${1%.*}".pdf
     '';
 
-  qBuildInputs = with pkgs; [ quarto python3 ];
+  qBuildInputs = with pkgs; [ quarto python3Full ];
 
 in pkgs.symlinkJoin {
     name = qname;
