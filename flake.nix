@@ -15,6 +15,7 @@
         ];
         extraPythonPackages = ps: with ps; [
           plotly
+          yaml
           numpy
           pandas
           matplotlib
