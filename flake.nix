@@ -19,6 +19,7 @@
           pandas
           matplotlib
           tabulate
+          pyyaml
         ];
       };
     };
