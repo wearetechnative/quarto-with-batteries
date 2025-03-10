@@ -4,9 +4,6 @@ let
   qname = "q4q";
 
   qscript = pkgs.writeShellScriptBin qname ''
-
-    echo $PATH
-    which python3
     ${pkgs.quarto}/bin/quarto render "''${1}"
     echo "''${1%.*}".pdf
     '';
